@@ -17,40 +17,6 @@ DEXCOM_AUTHENTICATE_ENDPOINT: str = "General/AuthenticatePublisherAccount"
 DEXCOM_GLUCOSE_READINGS_ENDPOINT: str = "Publisher/ReadPublisherLatestGlucoseValues"
 DEXCOM_HEADERS = {"content-type": "application/json"}
 
-# requestData = json.dumps(
-#     {
-#         "accountName": "BiancaJasmina",
-#         "password": "PMF!uru.nxe_zfu2zhm",
-#         "applicationId": "d89443d2-327c-4a6f-89e5-496bbb0317db",
-#     }
-# )
-# requestUrl = DEXCOM_BASE_URL + DEXCOM_AUTHENTICATE_ENDPOINT
-# accountId = urequests.post(requestUrl, data=requestData, headers=DEXCOM_HEADERS).text[1:-1]
-# print("Authentication response:", accountId)
-
-# requestData = json.dumps(
-#     {
-#         "accountId": accountId,
-#         "password": "PMF!uru.nxe_zfu2zhm",
-#         "applicationId": "d89443d2-327c-4a6f-89e5-496bbb0317db",
-#     }
-# )
-# requestUrl = DEXCOM_BASE_URL + DEXCOM_LOGIN_ENDPOINT
-# sessionId = urequests.post(requestUrl, data=requestData, headers=DEXCOM_HEADERS).text[1:-1]
-# print("Login response:", sessionId)
-
-# requestData = json.dumps({"sessionId": sessionId, "minutes": "10", "maxCount": "1"})
-# requestUrl = DEXCOM_BASE_URL + DEXCOM_GLUCOSE_READINGS_ENDPOINT
-# glucoseReadings = urequests.post(requestUrl, data=requestData, headers=headerData)
-# print("Glucose readings response:", glucoseReadings.json())
-
-# data_list = glucoseReadings.json()
-# readings = [Reading.from_dict(item) for item in data_list]
-
-# for reading in readings:
-#     mmol_L = round(reading.Value * 0.0555, 1)  # Convert mg/dL to mmol/L
-#     print(f"WT: {reading.WT}, ST: {reading.ST}, DT: {reading.DT}, Value: {mmol_L}, Trend: {reading.Trend}")
-
 
 class Dexcom:
     """
